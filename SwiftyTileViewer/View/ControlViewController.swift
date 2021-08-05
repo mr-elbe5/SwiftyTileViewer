@@ -15,7 +15,7 @@ class ControlViewController: NSViewController, PreferencesDelegate {
     
     var mapController : MapViewController? = nil
     
-    var serverLabel = NSTextField(labelWithString: Preferences.shared.urlPattern + "xxxxxx xxxxxx xxxxx")
+    var serverLabel = NSTextField(labelWithString: Preferences.shared.urlPattern)
 
     var zoomLabel = NSTextField(labelWithString: "")
     var zoomSlider : NSSlider!
