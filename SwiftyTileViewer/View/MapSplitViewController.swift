@@ -25,7 +25,7 @@ class MapSplitViewController: NSSplitViewController {
         splitView.identifier = NSUserInterfaceItemIdentifier(rawValue: splitViewRestorationIdentifier)
         
         mapController.view.heightAnchor.constraint(greaterThanOrEqualToConstant: 300).isActive = true
-        logController.view.heightAnchor.constraint(greaterThanOrEqualToConstant: 150).isActive = true
+        logController.view.heightAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
         
         let mapItem = NSSplitViewItem(viewController: mapController)
         addSplitViewItem(mapItem)

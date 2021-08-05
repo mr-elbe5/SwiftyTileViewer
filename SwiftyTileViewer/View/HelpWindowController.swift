@@ -10,15 +10,14 @@
 import Cocoa
 import SwiftyMacViewExtensions
 
-class PreferencesWindowController: NSWindowController, NSWindowDelegate {
-    
+class HelpWindowController: NSWindowController, NSWindowDelegate {
+
     init(){
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 500, height: 220), styleMask: [.closable, .titled, .resizable], backing: .buffered, defer: false)
-        window.title = "Global Preferences"
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 800, height: 270), styleMask: [.closable, .miniaturizable, .titled, .resizable], backing: .buffered, defer: false)
+        window.title = "Help"
         super.init(window: window)
         self.window?.delegate = self
-        let controller = PreferencesViewController()
-        controller.window = window
+        let controller = HelpViewController()
         contentViewController = controller
     }
     
@@ -29,6 +28,7 @@ class PreferencesWindowController: NSWindowController, NSWindowDelegate {
     func windowDidBecomeKey(_ notification: Notification) {
         window?.level = .statusBar
     }
+    
     func windowWillClose(_ notification: Notification) {
         NSApp.stopModal()
     }

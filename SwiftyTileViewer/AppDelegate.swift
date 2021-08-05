@@ -31,6 +31,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         controller.window?.center()
         NSApp.runModal(for: controller.window!)
     }
+    
+    @IBAction func openHelp(_ sender: Any) {
+        let controller = HelpWindowController()
+        NSApp.runModal(for: controller.window!)
+    }
 
 }
 

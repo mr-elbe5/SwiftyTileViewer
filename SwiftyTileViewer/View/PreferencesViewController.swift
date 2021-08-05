@@ -17,12 +17,13 @@ class PreferencesViewController:ViewController {
     var minLatitudeField = NSTextField(string: String(Preferences.shared.minLatitude))
     var maxLatitudeField = NSTextField(string: String(Preferences.shared.maxLatitude))
     var urlPatternField = NSTextField(string: Preferences.shared.urlPattern)
+    var loadTimeoutField = NSTextField(string: String(Preferences.shared.loadTimeout))
     
     var window : NSWindow!
     
     override func loadView() {
         view = NSView()
-        view.frame = CGRect(x: 0, y: 0, width: 500, height: 200)
+        view.frame = CGRect(x: 0, y: 0, width: 500, height: 220)
         let okButton = NSButton(title: "Save", target: self, action: #selector(save))
         okButton.keyEquivalent = "\r"
         
@@ -31,7 +32,8 @@ class PreferencesViewController:ViewController {
         grid.addLabeledRow(label: "Max. Longitude:", views: [maxLongitudeField])
         grid.addLabeledRow(label: "Min. Latitude:", views: [minLatitudeField])
         grid.addLabeledRow(label: "Max. Latitude:", views: [maxLatitudeField])
-        grid.addLabeledRow(label: "URL Pattern:", views: [urlPatternField])
+        grid.addLabeledRow(label: "URL Pattern (see help text!):", views: [urlPatternField])
+        grid.addLabeledRow(label: "Load timeout [sec]:", views: [loadTimeoutField])
         view.addSubview(grid)
         grid.placeBelow(anchor: view.topAnchor)
         let buttonGrid = NSGridView()
@@ -51,6 +53,7 @@ class PreferencesViewController:ViewController {
         let minLatitude : Double = minLatitudeField.doubleValue
         let maxLatitude : Double = maxLatitudeField.doubleValue
         let urlPattern : String = urlPatternField.stringValue
+        let loadTimeout : Int = Int(loadTimeoutField.intValue)
         if minLongitude < -180{
             error.append("Min. longitude must be greater or equal -180.\n")
         }
@@ -75,6 +78,9 @@ class PreferencesViewController:ViewController {
         else if !urlPattern.hasSuffix("/"){
             error.append("The url pattern must end with a slash '/'.\n")
         }
+        if loadTimeout <= 0{
+            error.append("You have to set a valid load timeout.\n")
+        }
         if !error.isEmpty{
             let alert = NSAlert()
             alert.messageText = "Please correct your entries:"
@@ -89,6 +95,7 @@ class PreferencesViewController:ViewController {
         Preferences.shared.minLatitude = minLatitude
         Preferences.shared.maxLatitude = maxLatitude
         Preferences.shared.urlPattern = urlPattern
+        Preferences.shared.loadTimeout = loadTimeout
         Preferences.shared.save()
         if let window = view.window{
             window.close()

@@ -18,6 +18,7 @@ class MapViewController: NSViewController {
     
     var mapData = [(zoom: Int, x: Int, y: Int)]()
     var unrenderedMapData = [(zoom: Int, x: Int, y: Int)]()
+    var unrenderedDone = false
     var loading = false
     
     init() {
@@ -55,16 +56,12 @@ class MapViewController: NSViewController {
     
     func loadMapFromList(){
         if mapData.isEmpty{
+            Log.info("no more tiles to load")
+            self.loading = false
             if !unrenderedMapData.isEmpty{
-                mapData.append(contentsOf: unrenderedMapData)
-                unrenderedMapData.removeAll()
-                Log.info("retrying unrendered tiles")
+                Log.info("\(unrenderedMapData.count) tiles could not be loaded.")
             }
-            else{
-                Log.info("no more tiles to load")
-                self.loading = false
-                return
-            }
+            return
         }
         if !loading{
             Log.info("loading interrupted")
@@ -74,7 +71,7 @@ class MapViewController: NSViewController {
         let urlString = "\(Preferences.shared.urlPattern)\(data.zoom)/\(data.x)/\(data.y).png"
         if let url = URL(string: urlString){
             Log.info("requesting tile \(data.zoom)/\(data.x)/\(data.y)")
-            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: TimeInterval(30*60))
+            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: TimeInterval(Preferences.shared.loadTimeout))
             let task = URLSession.shared.dataTask(with: request) { fileData, response, error in
                 if let error = error {
                     Log.error(error.localizedDescription)
@@ -105,6 +102,27 @@ class MapViewController: NSViewController {
                 }
             }
             task.resume()
+        }
+    }
+    
+    func loadFailedTiles(){
+        if loading{
+            Log.info("tiles are still loading")
+            return
+        }
+        if !unrenderedMapData.isEmpty{
+            mapData.append(contentsOf: unrenderedMapData)
+            unrenderedMapData.removeAll()
+            Log.info("retrying failed tiles")
+            loading = true
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.loadMapFromList()
+            }
+        }
+        else{
+            Log.info("no failed tiles to load")
+            self.loading = false
+            return
         }
     }
     

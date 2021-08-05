@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E64C47D26BBB9360035E8B1 /* HelpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64C47B26BBB9360035E8B1 /* HelpWindowController.swift */; };
+		4E64C47E26BBB9360035E8B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64C47C26BBB9360035E8B1 /* HelpViewController.swift */; };
 		4E72D4EC26BAF1DC00A1E5F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E72D4EB26BAF1DC00A1E5F5 /* AppDelegate.swift */; };
 		4E72D4EE26BAF1DD00A1E5F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E72D4ED26BAF1DD00A1E5F5 /* Assets.xcassets */; };
 		4E72D4F126BAF1DD00A1E5F5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E72D4EF26BAF1DD00A1E5F5 /* MainMenu.xib */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E64C47B26BBB9360035E8B1 /* HelpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpWindowController.swift; sourceTree = "<group>"; };
+		4E64C47C26BBB9360035E8B1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		4E72D4E826BAF1DC00A1E5F5 /* SwiftyTileViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyTileViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E72D4EB26BAF1DC00A1E5F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E72D4ED26BAF1DD00A1E5F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		4E72D4FE26BAF28200A1E5F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E64C47C26BBB9360035E8B1 /* HelpViewController.swift */,
+				4E64C47B26BBB9360035E8B1 /* HelpWindowController.swift */,
 				4E72D4FF26BAF28200A1E5F5 /* MainWindowController.swift */,
 				4E72D50026BAF28200A1E5F5 /* MapSplitViewController.swift */,
 				4E72D50126BAF28200A1E5F5 /* MapViewController.swift */,
@@ -201,7 +207,9 @@
 				4E72D51026BAF28200A1E5F5 /* MainWindow.swift in Sources */,
 				4E72D50D26BAF28200A1E5F5 /* PreferencesViewController.swift in Sources */,
 				4E72D50A26BAF28200A1E5F5 /* MapViewController.swift in Sources */,
+				4E64C47E26BBB9360035E8B1 /* HelpViewController.swift in Sources */,
 				4E72D4FC26BAF27400A1E5F5 /* Preferences.swift in Sources */,
+				4E64C47D26BBB9360035E8B1 /* HelpWindowController.swift in Sources */,
 				4E72D4FD26BAF27400A1E5F5 /* Statics.swift in Sources */,
 				4E72D50826BAF28200A1E5F5 /* MainWindowController.swift in Sources */,
 				4E72D50C26BAF28200A1E5F5 /* ControlViewController.swift in Sources */,

@@ -38,6 +38,7 @@ class ControlViewController: NSViewController, PreferencesDelegate {
     var minYTileField = NSTextField(string: String("0"))
     var maxYTileField = NSTextField(string: String("0"))
     var showAllTilesButton : NSButton!
+    var retryFailedTilesButton : NSButton!
     var stopButton : NSButton!
     
     var zoom : Int = 0
@@ -146,22 +147,22 @@ class ControlViewController: NSViewController, PreferencesDelegate {
         sbView.addSubview(xLabel)
         xLabel.setAnchors()
         xLabel.top(sbView.topAnchor, inset: 10)
-        xLabel.leading(sbView.leadingAnchor)
+        xLabel.leading(sbView.leadingAnchor, inset: 10)
         sbView.addSubview(singleXField)
         singleXField.setAnchors()
         singleXField.top(sbView.topAnchor, inset: 10)
         singleXField.leading(sbView.centerXAnchor)
-        singleXField.trailing(sbView.trailingAnchor)
+        singleXField.trailing(sbView.trailingAnchor, inset: 10)
         let yLabel = NSTextField(labelWithString: "y:")
         sbView.addSubview(yLabel)
         yLabel.setAnchors()
         yLabel.top(singleXField.bottomAnchor)
-        yLabel.leading(sbView.leadingAnchor)
+        yLabel.leading(sbView.leadingAnchor, inset: 10)
         sbView.addSubview(singleYField)
         singleYField.setAnchors()
         singleYField.top(singleXField.bottomAnchor)
         singleYField.leading(sbView.centerXAnchor)
-        singleYField.trailing(sbView.trailingAnchor)
+        singleYField.trailing(sbView.trailingAnchor, inset: 10)
         showSingleTileButton = NSButton(title: "Show", target: self, action: #selector(showSingleTile))
         sbView.addSubview(showSingleTileButton)
         showSingleTileButton.placeBelow(view: singleYField)
@@ -173,20 +174,25 @@ class ControlViewController: NSViewController, PreferencesDelegate {
         allTilesBox.titleFont = font
         view.addSubview(allTilesBox)
         allTilesBox.placeBelow(view: singleTileBox)
+        let warning = NSTextField(labelWithAttributedString: NSAttributedString(string: "See help information!", attributes: [NSAttributedString.Key.foregroundColor : NSColor.red]))
+        abView.addSubview(warning)
+        warning.setAnchors()
+        warning.top(abView.topAnchor, inset: 5)
+        warning.centerX(abView.centerXAnchor)
         abView.addSubview(minYTileField)
         minYTileField.setAnchors()
-        minYTileField.top(abView.topAnchor,inset: 10)
+        minYTileField.top(warning.bottomAnchor, inset: 5)
         minYTileField.centerX(abView.centerXAnchor)
         minYTileField.width(50)
         abView.addSubview(minXTileField)
         minXTileField.setAnchors()
         minXTileField.top(minYTileField.bottomAnchor)
-        minXTileField.leading(abView.leadingAnchor)
+        minXTileField.leading(abView.leadingAnchor, inset: 10)
         minXTileField.width(50)
         abView.addSubview(maxXTileField)
         maxXTileField.setAnchors()
         maxXTileField.top(minYTileField.bottomAnchor)
-        maxXTileField.trailing(cbView.trailingAnchor)
+        maxXTileField.trailing(cbView.trailingAnchor, inset: 10)
         maxXTileField.width(50)
         abView.addSubview(maxYTileField)
         maxYTileField.setAnchors()
@@ -196,9 +202,12 @@ class ControlViewController: NSViewController, PreferencesDelegate {
         showAllTilesButton = NSButton(title: "Show as sequence", target: self, action: #selector(loadCompleteLevel))
         abView.addSubview(showAllTilesButton)
         showAllTilesButton.placeBelow(view: maxYTileField)
+        retryFailedTilesButton = NSButton(title: "Retry failed tiles", target: self, action: #selector(retryFailed))
+        abView.addSubview(retryFailedTilesButton)
+        retryFailedTilesButton.placeBelow(view: showAllTilesButton)
         stopButton = NSButton(title: "Stop", target: self, action: #selector(stopLoading))
         abView.addSubview(stopButton)
-        stopButton.placeBelow(view: showAllTilesButton)
+        stopButton.placeBelow(view: retryFailedTilesButton)
         stopButton.bottom(abView.bottomAnchor,inset: 5)
         Preferences.shared.delegate = self
     }
@@ -229,6 +238,7 @@ class ControlViewController: NSViewController, PreferencesDelegate {
         let newZoom = Int(zoomSlider.intValue)
         if newZoom != zoom{
             zoom = newZoom
+            updateZoomLabel()
             computeTileBounds()
         }
     }
@@ -259,6 +269,10 @@ class ControlViewController: NSViewController, PreferencesDelegate {
             }
         }
         mapController?.loadMaps(data: mapData)
+    }
+    
+    @objc func retryFailed(){
+        mapController?.loadFailedTiles()
     }
     
     @objc func stopLoading(){

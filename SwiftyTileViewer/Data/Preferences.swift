@@ -25,25 +25,16 @@ class Preferences: Identifiable, Codable{
         case minLatitude
         case maxLatitude
         case urlPattern
+        case loadTimeout
     }
-    // europe coordinates
-    // var minLongitude : Double = -24.88
-    // var maxLongitude : Double = 33.52
-    // var minLatitude : Double = 42.97
-    // var maxLatitude : Double = 72.49
-    var minLongitude : Double = 0.0
-    var maxLongitude : Double = 360.0
-    var minLatitude : Double = -90.0
-    var maxLatitude : Double = 90.0
+    var minLongitude : Double = -180.0
+    var maxLongitude : Double = 180.0
+    var minLatitude : Double = -80.0
+    var maxLatitude : Double = 80.0
     var urlPattern : String = "https://tile.openstreetmap.org/"
+    var loadTimeout : Int = 30*60
     
     var delegate : PreferencesDelegate? = nil
-
-    static var isDarkMode : Bool{
-        get{
-            UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
-        }
-    }
 
     init(){
     }
@@ -52,9 +43,10 @@ class Preferences: Identifiable, Codable{
         let values = try decoder.container(keyedBy: CodingKeys.self)
         minLongitude = try values.decodeIfPresent(Double.self, forKey: .minLongitude) ?? -180.0
         maxLongitude = try values.decodeIfPresent(Double.self, forKey: .maxLongitude) ?? 180.0
-        minLatitude = try values.decodeIfPresent(Double.self, forKey: .minLatitude) ?? -90.0
-        maxLatitude = try values.decodeIfPresent(Double.self, forKey: .maxLatitude) ?? 90.0
+        minLatitude = try values.decodeIfPresent(Double.self, forKey: .minLatitude) ?? -80.0
+        maxLatitude = try values.decodeIfPresent(Double.self, forKey: .maxLatitude) ?? 80.0
         urlPattern = try values.decodeIfPresent(String.self, forKey: .urlPattern) ?? "https://tile.openstreetmap.org/"
+        loadTimeout = try values.decodeIfPresent(Int.self, forKey: .loadTimeout) ?? 30*60
         save()
     }
     
@@ -65,6 +57,7 @@ class Preferences: Identifiable, Codable{
         try container.encode(minLatitude, forKey: .minLatitude)
         try container.encode(maxLatitude, forKey: .maxLatitude)
         try container.encode(urlPattern, forKey: .urlPattern)
+        try container.encode(loadTimeout, forKey: .loadTimeout)
     }
     
     static func load(){
