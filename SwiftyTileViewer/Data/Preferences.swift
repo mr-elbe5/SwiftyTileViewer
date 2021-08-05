@@ -31,7 +31,7 @@ class Preferences: Identifiable, Codable{
     var maxLongitude : Double = 180.0
     var minLatitude : Double = -80.0
     var maxLatitude : Double = 80.0
-    var urlPattern : String = "https://tile.openstreetmap.org/"
+    var urlPattern : String = ""
     var loadTimeout : Int = 30*60
     
     var delegate : PreferencesDelegate? = nil
@@ -45,7 +45,7 @@ class Preferences: Identifiable, Codable{
         maxLongitude = try values.decodeIfPresent(Double.self, forKey: .maxLongitude) ?? 180.0
         minLatitude = try values.decodeIfPresent(Double.self, forKey: .minLatitude) ?? -80.0
         maxLatitude = try values.decodeIfPresent(Double.self, forKey: .maxLatitude) ?? 80.0
-        urlPattern = try values.decodeIfPresent(String.self, forKey: .urlPattern) ?? "https://tile.openstreetmap.org/"
+        urlPattern = try values.decodeIfPresent(String.self, forKey: .urlPattern) ?? ""
         loadTimeout = try values.decodeIfPresent(Int.self, forKey: .loadTimeout) ?? 30*60
         save()
     }

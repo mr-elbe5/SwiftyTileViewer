@@ -14,6 +14,8 @@ import SwiftyMacViewExtensions
 class ControlViewController: NSViewController, PreferencesDelegate {
     
     var mapController : MapViewController? = nil
+    
+    var serverLabel = NSTextField(labelWithString: Preferences.shared.urlPattern + "xxxxxx xxxxxx xxxxx")
 
     var zoomLabel = NSTextField(labelWithString: "")
     var zoomSlider : NSSlider!
@@ -55,12 +57,23 @@ class ControlViewController: NSViewController, PreferencesDelegate {
         view = NSView()
         let font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
         
+        let serverBox = NSBox()
+        guard let svView = serverBox.contentView else { return }
+        serverBox.title = "Map Server"
+        serverBox.titleFont = font
+        view.addSubview(serverBox)
+        serverBox.placeBelow(anchor: view.topAnchor)
+        serverLabel.lineBreakMode = .byCharWrapping
+        svView.addSubview(serverLabel)
+        serverLabel.placeBelow(anchor: svView.topAnchor)
+        serverLabel.connectBottom(view: svView)
+        
         let coordinateBox = NSBox()
         guard let cbView = coordinateBox.contentView else { return }
         coordinateBox.title = "Bounding Coordinates"
         coordinateBox.titleFont = font
         view.addSubview(coordinateBox)
-        coordinateBox.placeBelow(anchor: view.topAnchor)
+        coordinateBox.placeBelow(view: serverBox)
         cbView.addSubview(maxLatitudeField)
         maxLatitudeField.setAnchors()
         maxLatitudeField.top(cbView.topAnchor,inset: 10)
@@ -213,6 +226,7 @@ class ControlViewController: NSViewController, PreferencesDelegate {
     }
     
     func preferencesChanged(){
+        serverLabel.stringValue = Preferences.shared.urlPattern
         minLongitudeField.stringValue = String(Preferences.shared.minLongitude)
         maxLongitudeField.stringValue = String(Preferences.shared.maxLongitude)
         minLatitudeField.stringValue = String(Preferences.shared.minLatitude)
@@ -244,6 +258,9 @@ class ControlViewController: NSViewController, PreferencesDelegate {
     }
     
     @objc func showSingleTile() {
+        if !checkServerURL(){
+            return
+        }
         let x = Int(singleXField.intValue)
         let y = Int(singleYField.intValue)
         var mapData = [(zoom: Int, x: Int, y: Int)]()
@@ -252,6 +269,9 @@ class ControlViewController: NSViewController, PreferencesDelegate {
     }
     
     @objc func loadCompleteLevel(){
+        if !checkServerURL(){
+            return
+        }
         let xMin = Int(minXTileField.intValue)
         let xMax = Int(maxXTileField.intValue)
         let yMin = Int(minYTileField.intValue)
@@ -271,7 +291,23 @@ class ControlViewController: NSViewController, PreferencesDelegate {
         mapController?.loadMaps(data: mapData)
     }
     
+    func checkServerURL() -> Bool{
+        if Preferences.shared.urlPattern.isEmpty{
+            let alert = NSAlert()
+            alert.messageText = "No server configured"
+            alert.informativeText = "Please set a server URL in Preferences."
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "OK")
+            alert.beginSheetModal(for: view.window!, completionHandler: nil)
+            return false
+        }
+        return true
+    }
+    
     @objc func retryFailed(){
+        if !checkServerURL(){
+            return
+        }
         mapController?.loadFailedTiles()
     }
     
