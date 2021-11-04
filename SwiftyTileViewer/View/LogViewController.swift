@@ -8,8 +8,6 @@
 */
 
 import Cocoa
-import SwiftyLog
-import SwiftyMacViewExtensions
 
 class LogViewController: NSViewController, LogDelegate {
     

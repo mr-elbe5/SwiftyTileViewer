@@ -1,5 +1,5 @@
 /*
- OSM Map Viewer
+ SwiftyMacViewExtensions
  Copyright (C) 2021 Michael Roennau
 
  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
@@ -9,32 +9,19 @@
 
 import Cocoa
 
+class PopupWindow: NSWindow {
 
+    var parentFrame : NSRect? = nil
 
-class MainWindowController: NSWindowController, NSWindowDelegate {
-
-    convenience init() {
-        self.init(windowNibName: "")
+    // positions itself centered in frame of calling window
+    override func center() {
+        if let frame = parentFrame{
+            let ownPosition = self.frame
+            let newTopLeft = NSMakePoint(frame.minX + frame.width/2 - ownPosition.width/2, frame.minY + frame.height/2 + ownPosition.height/2)
+            self.setFrameTopLeftPoint(newTopLeft)
+            return
+        }
+        super.center()
     }
-
-    override func loadWindow() {
-        let window = MainWindow()
-        window.title = Statics.title
-        window.delegate = self
-        contentViewController = MainViewController()
-        self.window = window
-    }
-
-    // Window delegate
-
-    func windowDidBecomeKey(_ notification: Notification) {
-        window?.makeFirstResponder(nil)
-    }
-
-    func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApplication.shared.terminate(self)
-        return true
-    }
-
+    
 }
-

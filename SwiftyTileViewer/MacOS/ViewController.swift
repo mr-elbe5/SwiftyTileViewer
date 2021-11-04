@@ -1,5 +1,5 @@
 /*
- OSM Map Viewer
+ SwiftyMacViewExtensions
  Copyright (C) 2021 Michael Roennau
 
  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
@@ -7,30 +7,22 @@
  You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>.
 */
 
+import Foundation
 import Cocoa
 
-
-class PreferencesWindowController: NSWindowController, NSWindowDelegate {
+class ViewController: NSViewController{
     
-    init(){
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 500, height: 220), styleMask: [.closable, .titled, .resizable], backing: .buffered, defer: false)
-        window.title = "Global Preferences"
-        super.init(window: window)
-        self.window?.delegate = self
-        let controller = PreferencesViewController()
-        controller.window = window
-        contentViewController = controller
+    init() {
+        super.init(nibName: "", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func windowDidBecomeKey(_ notification: Notification) {
-        window?.level = .statusBar
+    override func loadView(){
+        //needed if no nib exists
+        view = NSView()
     }
-    func windowWillClose(_ notification: Notification) {
-        NSApp.stopModal()
-    }
-
+    
 }

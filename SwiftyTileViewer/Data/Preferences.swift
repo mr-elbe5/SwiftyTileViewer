@@ -8,8 +8,8 @@
 */
 
 import Foundation
-import SwiftyDataExtensions
-import SwiftyMacViewExtensions
+
+
 
 protocol PreferencesDelegate {
     func preferencesChanged()

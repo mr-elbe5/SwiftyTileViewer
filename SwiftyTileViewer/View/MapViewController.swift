@@ -8,8 +8,8 @@
 */
 
 import Cocoa
-import SwiftyLog
-import SwiftyMacViewExtensions
+
+
 
 class MapViewController: NSViewController {
     

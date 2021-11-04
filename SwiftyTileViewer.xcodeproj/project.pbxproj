@@ -3,12 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E64C47D26BBB9360035E8B1 /* HelpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64C47B26BBB9360035E8B1 /* HelpWindowController.swift */; };
 		4E64C47E26BBB9360035E8B1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64C47C26BBB9360035E8B1 /* HelpViewController.swift */; };
+		4E672ADE2734786400CBB3CE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672ADA2734786400CBB3CE /* Date.swift */; };
+		4E672ADF2734786400CBB3CE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672ADB2734786400CBB3CE /* Array.swift */; };
+		4E672AE02734786400CBB3CE /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672ADC2734786400CBB3CE /* Codable.swift */; };
+		4E672AE12734786400CBB3CE /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672ADD2734786400CBB3CE /* Dictionary.swift */; };
+		4E672AE72734786E00CBB3CE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AE32734786E00CBB3CE /* Log.swift */; };
+		4E672AE82734786E00CBB3CE /* LogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AE42734786E00CBB3CE /* LogDelegate.swift */; };
+		4E672AE92734786E00CBB3CE /* LogChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AE52734786E00CBB3CE /* LogChunk.swift */; };
+		4E672AEA2734786E00CBB3CE /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AE62734786E00CBB3CE /* LogLevel.swift */; };
+		4E672AFB2734787700CBB3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AEC2734787700CBB3CE /* ViewController.swift */; };
+		4E672AFC2734787700CBB3CE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AED2734787700CBB3CE /* Alert.swift */; };
+		4E672AFD2734787700CBB3CE /* PopupWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AEE2734787700CBB3CE /* PopupWindow.swift */; };
+		4E672AFE2734787700CBB3CE /* NSBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AEF2734787700CBB3CE /* NSBox.swift */; };
+		4E672AFF2734787700CBB3CE /* NSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF02734787700CBB3CE /* NSScrollView.swift */; };
+		4E672B002734787700CBB3CE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF12734787700CBB3CE /* WindowController.swift */; };
+		4E672B012734787700CBB3CE /* NSInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF22734787700CBB3CE /* NSInsets.swift */; };
+		4E672B022734787700CBB3CE /* PopupWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF32734787700CBB3CE /* PopupWindowController.swift */; };
+		4E672B032734787700CBB3CE /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF42734787700CBB3CE /* NSTextView.swift */; };
+		4E672B042734787700CBB3CE /* NSWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF52734787700CBB3CE /* NSWindowController.swift */; };
+		4E672B052734787700CBB3CE /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF62734787700CBB3CE /* NSMenuItem.swift */; };
+		4E672B062734787700CBB3CE /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF72734787700CBB3CE /* NSView.swift */; };
+		4E672B072734787700CBB3CE /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF82734787700CBB3CE /* CodableColor.swift */; };
+		4E672B082734787700CBB3CE /* NSGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AF92734787700CBB3CE /* NSGridView.swift */; };
+		4E672B092734787700CBB3CE /* AttributedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672AFA2734787700CBB3CE /* AttributedButton.swift */; };
+		4E672B0E2734787F00CBB3CE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672B0B2734787F00CBB3CE /* String.swift */; };
+		4E672B0F2734787F00CBB3CE /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672B0C2734787F00CBB3CE /* StringProtocol.swift */; };
+		4E672B102734787F00CBB3CE /* StringLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E672B0D2734787F00CBB3CE /* StringLocalizer.swift */; };
 		4E72D4EC26BAF1DC00A1E5F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E72D4EB26BAF1DC00A1E5F5 /* AppDelegate.swift */; };
 		4E72D4EE26BAF1DD00A1E5F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E72D4ED26BAF1DD00A1E5F5 /* Assets.xcassets */; };
 		4E72D4F126BAF1DD00A1E5F5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E72D4EF26BAF1DD00A1E5F5 /* MainMenu.xib */; };
@@ -23,14 +49,37 @@
 		4E72D50E26BAF28200A1E5F5 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E72D50526BAF28200A1E5F5 /* PreferencesWindowController.swift */; };
 		4E72D50F26BAF28200A1E5F5 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E72D50626BAF28200A1E5F5 /* LogViewController.swift */; };
 		4E72D51026BAF28200A1E5F5 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E72D50726BAF28200A1E5F5 /* MainWindow.swift */; };
-		4E72D51326BAF35800A1E5F5 /* SwiftyLog in Frameworks */ = {isa = PBXBuildFile; productRef = 4E72D51226BAF35800A1E5F5 /* SwiftyLog */; };
-		4E72D51626BAF37400A1E5F5 /* SwiftyMacViewExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 4E72D51526BAF37400A1E5F5 /* SwiftyMacViewExtensions */; };
-		4E72D51926BAF39F00A1E5F5 /* SwiftyDataExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 4E72D51826BAF39F00A1E5F5 /* SwiftyDataExtensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E64C47B26BBB9360035E8B1 /* HelpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpWindowController.swift; sourceTree = "<group>"; };
 		4E64C47C26BBB9360035E8B1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		4E672ADA2734786400CBB3CE /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4E672ADB2734786400CBB3CE /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		4E672ADC2734786400CBB3CE /* Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
+		4E672ADD2734786400CBB3CE /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		4E672AE32734786E00CBB3CE /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		4E672AE42734786E00CBB3CE /* LogDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDelegate.swift; sourceTree = "<group>"; };
+		4E672AE52734786E00CBB3CE /* LogChunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogChunk.swift; sourceTree = "<group>"; };
+		4E672AE62734786E00CBB3CE /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		4E672AEC2734787700CBB3CE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E672AED2734787700CBB3CE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		4E672AEE2734787700CBB3CE /* PopupWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindow.swift; sourceTree = "<group>"; };
+		4E672AEF2734787700CBB3CE /* NSBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBox.swift; sourceTree = "<group>"; };
+		4E672AF02734787700CBB3CE /* NSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSScrollView.swift; sourceTree = "<group>"; };
+		4E672AF12734787700CBB3CE /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		4E672AF22734787700CBB3CE /* NSInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSInsets.swift; sourceTree = "<group>"; };
+		4E672AF32734787700CBB3CE /* PopupWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowController.swift; sourceTree = "<group>"; };
+		4E672AF42734787700CBB3CE /* NSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
+		4E672AF52734787700CBB3CE /* NSWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSWindowController.swift; sourceTree = "<group>"; };
+		4E672AF62734787700CBB3CE /* NSMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		4E672AF72734787700CBB3CE /* NSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
+		4E672AF82734787700CBB3CE /* CodableColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
+		4E672AF92734787700CBB3CE /* NSGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSGridView.swift; sourceTree = "<group>"; };
+		4E672AFA2734787700CBB3CE /* AttributedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedButton.swift; sourceTree = "<group>"; };
+		4E672B0B2734787F00CBB3CE /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4E672B0C2734787F00CBB3CE /* StringProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
+		4E672B0D2734787F00CBB3CE /* StringLocalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLocalizer.swift; sourceTree = "<group>"; };
 		4E72D4E826BAF1DC00A1E5F5 /* SwiftyTileViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyTileViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E72D4EB26BAF1DC00A1E5F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E72D4ED26BAF1DD00A1E5F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,15 +104,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E72D51326BAF35800A1E5F5 /* SwiftyLog in Frameworks */,
-				4E72D51626BAF37400A1E5F5 /* SwiftyMacViewExtensions in Frameworks */,
-				4E72D51926BAF39F00A1E5F5 /* SwiftyDataExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E672AD92734786400CBB3CE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4E672ADA2734786400CBB3CE /* Date.swift */,
+				4E672ADB2734786400CBB3CE /* Array.swift */,
+				4E672ADC2734786400CBB3CE /* Codable.swift */,
+				4E672ADD2734786400CBB3CE /* Dictionary.swift */,
+			);
+			name = Data;
+			path = ../../SwiftyBasePool/Sources/SwiftyBasePool/Data;
+			sourceTree = "<group>";
+		};
+		4E672AE22734786E00CBB3CE /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				4E672AE32734786E00CBB3CE /* Log.swift */,
+				4E672AE42734786E00CBB3CE /* LogDelegate.swift */,
+				4E672AE52734786E00CBB3CE /* LogChunk.swift */,
+				4E672AE62734786E00CBB3CE /* LogLevel.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		4E672AEB2734787700CBB3CE /* MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				4E672AEC2734787700CBB3CE /* ViewController.swift */,
+				4E672AED2734787700CBB3CE /* Alert.swift */,
+				4E672AEE2734787700CBB3CE /* PopupWindow.swift */,
+				4E672AEF2734787700CBB3CE /* NSBox.swift */,
+				4E672AF02734787700CBB3CE /* NSScrollView.swift */,
+				4E672AF12734787700CBB3CE /* WindowController.swift */,
+				4E672AF22734787700CBB3CE /* NSInsets.swift */,
+				4E672AF32734787700CBB3CE /* PopupWindowController.swift */,
+				4E672AF42734787700CBB3CE /* NSTextView.swift */,
+				4E672AF52734787700CBB3CE /* NSWindowController.swift */,
+				4E672AF62734787700CBB3CE /* NSMenuItem.swift */,
+				4E672AF72734787700CBB3CE /* NSView.swift */,
+				4E672AF82734787700CBB3CE /* CodableColor.swift */,
+				4E672AF92734787700CBB3CE /* NSGridView.swift */,
+				4E672AFA2734787700CBB3CE /* AttributedButton.swift */,
+			);
+			path = MacOS;
+			sourceTree = "<group>";
+		};
+		4E672B0A2734787F00CBB3CE /* String */ = {
+			isa = PBXGroup;
+			children = (
+				4E672B0B2734787F00CBB3CE /* String.swift */,
+				4E672B0C2734787F00CBB3CE /* StringProtocol.swift */,
+				4E672B0D2734787F00CBB3CE /* StringLocalizer.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		4E72D4DF26BAF1DC00A1E5F5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +184,10 @@
 		4E72D4EA26BAF1DC00A1E5F5 /* SwiftyTileViewer */ = {
 			isa = PBXGroup;
 			children = (
+				4E672B0A2734787F00CBB3CE /* String */,
+				4E672AEB2734787700CBB3CE /* MacOS */,
+				4E672AE22734786E00CBB3CE /* Log */,
+				4E672AD92734786400CBB3CE /* Data */,
 				4E72D4FE26BAF28200A1E5F5 /* View */,
 				4E72D4F926BAF27400A1E5F5 /* Data */,
 				4E72D4EB26BAF1DC00A1E5F5 /* AppDelegate.swift */,
@@ -138,9 +243,6 @@
 			);
 			name = SwiftyTileViewer;
 			packageProductDependencies = (
-				4E72D51226BAF35800A1E5F5 /* SwiftyLog */,
-				4E72D51526BAF37400A1E5F5 /* SwiftyMacViewExtensions */,
-				4E72D51826BAF39F00A1E5F5 /* SwiftyDataExtensions */,
 			);
 			productName = SwiftyTileViewer;
 			productReference = 4E72D4E826BAF1DC00A1E5F5 /* SwiftyTileViewer.app */;
@@ -170,9 +272,6 @@
 			);
 			mainGroup = 4E72D4DF26BAF1DC00A1E5F5;
 			packageReferences = (
-				4E72D51126BAF35800A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyLog" */,
-				4E72D51426BAF37400A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyMacViewExtensions" */,
-				4E72D51726BAF39F00A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyDataExtensions" */,
 			);
 			productRefGroup = 4E72D4E926BAF1DC00A1E5F5 /* Products */;
 			projectDirPath = "";
@@ -200,20 +299,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E672B0E2734787F00CBB3CE /* String.swift in Sources */,
+				4E672AFE2734787700CBB3CE /* NSBox.swift in Sources */,
 				4E72D50B26BAF28200A1E5F5 /* MainViewController.swift in Sources */,
+				4E672AE02734786400CBB3CE /* Codable.swift in Sources */,
+				4E672B102734787F00CBB3CE /* StringLocalizer.swift in Sources */,
+				4E672B062734787700CBB3CE /* NSView.swift in Sources */,
+				4E672ADE2734786400CBB3CE /* Date.swift in Sources */,
 				4E72D50926BAF28200A1E5F5 /* MapSplitViewController.swift in Sources */,
 				4E72D50E26BAF28200A1E5F5 /* PreferencesWindowController.swift in Sources */,
+				4E672AE12734786400CBB3CE /* Dictionary.swift in Sources */,
+				4E672AFC2734787700CBB3CE /* Alert.swift in Sources */,
 				4E72D50F26BAF28200A1E5F5 /* LogViewController.swift in Sources */,
+				4E672B092734787700CBB3CE /* AttributedButton.swift in Sources */,
+				4E672B072734787700CBB3CE /* CodableColor.swift in Sources */,
+				4E672AFB2734787700CBB3CE /* ViewController.swift in Sources */,
+				4E672B0F2734787F00CBB3CE /* StringProtocol.swift in Sources */,
+				4E672B052734787700CBB3CE /* NSMenuItem.swift in Sources */,
+				4E672B022734787700CBB3CE /* PopupWindowController.swift in Sources */,
+				4E672ADF2734786400CBB3CE /* Array.swift in Sources */,
 				4E72D51026BAF28200A1E5F5 /* MainWindow.swift in Sources */,
 				4E72D50D26BAF28200A1E5F5 /* PreferencesViewController.swift in Sources */,
+				4E672AE92734786E00CBB3CE /* LogChunk.swift in Sources */,
 				4E72D50A26BAF28200A1E5F5 /* MapViewController.swift in Sources */,
+				4E672B042734787700CBB3CE /* NSWindowController.swift in Sources */,
+				4E672B012734787700CBB3CE /* NSInsets.swift in Sources */,
 				4E64C47E26BBB9360035E8B1 /* HelpViewController.swift in Sources */,
 				4E72D4FC26BAF27400A1E5F5 /* Preferences.swift in Sources */,
+				4E672B002734787700CBB3CE /* WindowController.swift in Sources */,
+				4E672AE82734786E00CBB3CE /* LogDelegate.swift in Sources */,
+				4E672AEA2734786E00CBB3CE /* LogLevel.swift in Sources */,
 				4E64C47D26BBB9360035E8B1 /* HelpWindowController.swift in Sources */,
+				4E672AE72734786E00CBB3CE /* Log.swift in Sources */,
 				4E72D4FD26BAF27400A1E5F5 /* Statics.swift in Sources */,
+				4E672B032734787700CBB3CE /* NSTextView.swift in Sources */,
 				4E72D50826BAF28200A1E5F5 /* MainWindowController.swift in Sources */,
 				4E72D50C26BAF28200A1E5F5 /* ControlViewController.swift in Sources */,
 				4E72D4EC26BAF1DC00A1E5F5 /* AppDelegate.swift in Sources */,
+				4E672B082734787700CBB3CE /* NSGridView.swift in Sources */,
+				4E672AFF2734787700CBB3CE /* NSScrollView.swift in Sources */,
+				4E672AFD2734787700CBB3CE /* PopupWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,51 +537,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4E72D51126BAF35800A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyLog" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mr-elbe5/SwiftyLog.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.2;
-			};
-		};
-		4E72D51426BAF37400A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyMacViewExtensions" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mr-elbe5/SwiftyMacViewExtensions.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.3;
-			};
-		};
-		4E72D51726BAF39F00A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyDataExtensions" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mr-elbe5/SwiftyDataExtensions";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4E72D51226BAF35800A1E5F5 /* SwiftyLog */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4E72D51126BAF35800A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyLog" */;
-			productName = SwiftyLog;
-		};
-		4E72D51526BAF37400A1E5F5 /* SwiftyMacViewExtensions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4E72D51426BAF37400A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyMacViewExtensions" */;
-			productName = SwiftyMacViewExtensions;
-		};
-		4E72D51826BAF39F00A1E5F5 /* SwiftyDataExtensions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4E72D51726BAF39F00A1E5F5 /* XCRemoteSwiftPackageReference "SwiftyDataExtensions" */;
-			productName = SwiftyDataExtensions;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4E72D4E026BAF1DC00A1E5F5 /* Project object */;
 }

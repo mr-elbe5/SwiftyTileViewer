@@ -8,7 +8,7 @@
 */
 
 import Cocoa
-import SwiftyMacViewExtensions
+
 
 class HelpWindowController: NSWindowController, NSWindowDelegate {
 
